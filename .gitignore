@@ -1,0 +1,11 @@
+# .gitignore para un proyecto Node.js
+node_modules/
+.env
+*.log
+dist/
+coverage/
+.DS_Store
+.idea/
+.vscode/
+package-lock.json
+yarn.lock

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      .group-header th {
+        font-size: 200%;
+      }
+      .sub-header th {
+        font-size: 150%;
+      }
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        white-space: nowrap;
+        padding: .3em;
+      }
+      table {
+        margin: 0 auto;
+      }
+      .severity {
+        text-align: center;
+        font-weight: bold;
+        color: #fafafa;
+      }
+      .severity-LOW .severity { background-color: #5fbb31; }
+      .severity-MEDIUM .severity { background-color: #e9c600; }
+      .severity-HIGH .severity { background-color: #ff8800; }
+      .severity-CRITICAL .severity { background-color: #e40000; }
+      .severity-UNKNOWN .severity { background-color: #747474; }
+      .severity-LOW { background-color: #5fbb3160; }
+      .severity-MEDIUM { background-color: #e9c60060; }
+      .severity-HIGH { background-color: #ff880060; }
+      .severity-CRITICAL { background-color: #e4000060; }
+      .severity-UNKNOWN { background-color: #74747460; }
+      table tr td:first-of-type {
+        font-weight: bold;
+      }
+      .links a,
+      .links[data-more-links=on] a {
+        display: block;
+      }
+      .links[data-more-links=off] a:nth-of-type(1n+5) {
+        display: none;
+      }
+      a.toggle-more-links { cursor: pointer; }
+    </style>
+    <title>Node.js - Trivy Report - 2025-06-17 00:01:08.693348223 -0400 -04 m=+0.420591592 </title>
+    <script>
+      window.onload = function() {
+        document.querySelectorAll('td.links').forEach(function(linkCell) {
+          var links = [].concat.apply([], linkCell.querySelectorAll('a'));
+          [].sort.apply(links, function(a, b) {
+            return a.href > b.href ? 1 : -1;
+          });
+          links.forEach(function(link, idx) {
+            if (links.length > 3 && 3 === idx) {
+              var toggleLink = document.createElement('a');
+              toggleLink.innerText = "Toggle more links";
+              toggleLink.href = "#toggleMore";
+              toggleLink.setAttribute("class", "toggle-more-links");
+              linkCell.appendChild(toggleLink);
+            }
+            linkCell.appendChild(link);
+          });
+        });
+        document.querySelectorAll('a.toggle-more-links').forEach(function(toggleLink) {
+          toggleLink.onclick = function() {
+            var expanded = toggleLink.parentElement.getAttribute("data-more-links");
+            toggleLink.parentElement.setAttribute("data-more-links", "on" === expanded ? "off" : "on");
+            return false;
+          };
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Node.js - Trivy Report - 2025-06-17 00:01:08.693445385 -0400 -04 m=+0.420688731</h1>
+    <table>
+      <tr class="group-header"><th colspan="6">node-pkg</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">ansi-regex</td>
+        <td>CVE-2021-3807</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">3.0.0</td>
+        <td>6.0.1, 5.0.1, 4.1.1, 3.0.1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/errata/RHSA-2022:6595">https://access.redhat.com/errata/RHSA-2022:6595</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2021-3807">https://access.redhat.com/security/cve/CVE-2021-3807</a>
+          <a href="https://app.snyk.io/vuln/SNYK-JS-ANSIREGEX-1583908">https://app.snyk.io/vuln/SNYK-JS-ANSIREGEX-1583908</a>
+          <a href="https://bugzilla.redhat.com/1907444">https://bugzilla.redhat.com/1907444</a>
+          <a href="https://bugzilla.redhat.com/1945459">https://bugzilla.redhat.com/1945459</a>
+          <a href="https://bugzilla.redhat.com/1964461">https://bugzilla.redhat.com/1964461</a>
+          <a href="https://bugzilla.redhat.com/2007557">https://bugzilla.redhat.com/2007557</a>
+          <a href="https://bugzilla.redhat.com/2098556">https://bugzilla.redhat.com/2098556</a>
+          <a href="https://bugzilla.redhat.com/2102001">https://bugzilla.redhat.com/2102001</a>
+          <a href="https://bugzilla.redhat.com/2105422">https://bugzilla.redhat.com/2105422</a>
+          <a href="https://bugzilla.redhat.com/2105426">https://bugzilla.redhat.com/2105426</a>
+          <a href="https://bugzilla.redhat.com/2105428">https://bugzilla.redhat.com/2105428</a>
+          <a href="https://bugzilla.redhat.com/2105430">https://bugzilla.redhat.com/2105430</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2022-6595.html">https://errata.almalinux.org/9/ALSA-2022-6595.html</a>
+          <a href="https://github.com/chalk/ansi-regex">https://github.com/chalk/ansi-regex</a>
+          <a href="https://github.com/chalk/ansi-regex/commit/419250fa510bf31b4cc672e76537a64f9332e1f1">https://github.com/chalk/ansi-regex/commit/419250fa510bf31b4cc672e76537a64f9332e1f1</a>
+          <a href="https://github.com/chalk/ansi-regex/commit/75a657da7af875b2e2724fd6331bf0a4b23d3c9a">https://github.com/chalk/ansi-regex/commit/75a657da7af875b2e2724fd6331bf0a4b23d3c9a</a>
+          <a href="https://github.com/chalk/ansi-regex/commit/8d1d7cdb586269882c4bdc1b7325d0c58c8f76f9">https://github.com/chalk/ansi-regex/commit/8d1d7cdb586269882c4bdc1b7325d0c58c8f76f9</a>
+          <a href="https://github.com/chalk/ansi-regex/commit/c3c0b3f2736b9c01feec0fef33980c43720dcde8">https://github.com/chalk/ansi-regex/commit/c3c0b3f2736b9c01feec0fef33980c43720dcde8</a>
+          <a href="https://github.com/chalk/ansi-regex/issues/38#issuecomment-924086311">https://github.com/chalk/ansi-regex/issues/38#issuecomment-924086311</a>
+          <a href="https://github.com/chalk/ansi-regex/issues/38#issuecomment-925924774">https://github.com/chalk/ansi-regex/issues/38#issuecomment-925924774</a>
+          <a href="https://github.com/chalk/ansi-regex/releases/tag/v6.0.1">https://github.com/chalk/ansi-regex/releases/tag/v6.0.1</a>
+          <a href="https://huntr.dev/bounties/5b3cf33b-ede0-4398-9974-800876dfd994">https://huntr.dev/bounties/5b3cf33b-ede0-4398-9974-800876dfd994</a>
+          <a href="https://linux.oracle.com/cve/CVE-2021-3807.html">https://linux.oracle.com/cve/CVE-2021-3807.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2022-6595.html">https://linux.oracle.com/errata/ELSA-2022-6595.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3807">https://nvd.nist.gov/vuln/detail/CVE-2021-3807</a>
+          <a href="https://security.netapp.com/advisory/ntap-20221014-0002">https://security.netapp.com/advisory/ntap-20221014-0002</a>
+          <a href="https://security.netapp.com/advisory/ntap-20221014-0002/">https://security.netapp.com/advisory/ntap-20221014-0002/</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2021-3807">https://www.cve.org/CVERecord?id=CVE-2021-3807</a>
+          <a href="https://www.oracle.com/security-alerts/cpuapr2022.html">https://www.oracle.com/security-alerts/cpuapr2022.html</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">ansi-regex</td>
+        <td>CVE-2021-3807</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">4.1.0</td>
+        <td>6.0.1, 5.0.1, 4.1.1, 3.0.1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/errata/RHSA-2022:6595">https://access.redhat.com/errata/RHSA-2022:6595</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2021-3807">https://access.redhat.com/security/cve/CVE-2021-3807</a>
+          <a href="https://app.snyk.io/vuln/SNYK-JS-ANSIREGEX-1583908">https://app.snyk.io/vuln/SNYK-JS-ANSIREGEX-1583908</a>
+          <a href="https://bugzilla.redhat.com/1907444">https://bugzilla.redhat.com/1907444</a>
+          <a href="https://bugzilla.redhat.com/1945459">https://bugzilla.redhat.com/1945459</a>
+          <a href="https://bugzilla.redhat.com/1964461">https://bugzilla.redhat.com/1964461</a>
+          <a href="https://bugzilla.redhat.com/2007557">https://bugzilla.redhat.com/2007557</a>
+          <a href="https://bugzilla.redhat.com/2098556">https://bugzilla.redhat.com/2098556</a>
+          <a href="https://bugzilla.redhat.com/2102001">https://bugzilla.redhat.com/2102001</a>
+          <a href="https://bugzilla.redhat.com/2105422">https://bugzilla.redhat.com/2105422</a>
+          <a href="https://bugzilla.redhat.com/2105426">https://bugzilla.redhat.com/2105426</a>
+          <a href="https://bugzilla.redhat.com/2105428">https://bugzilla.redhat.com/2105428</a>
+          <a href="https://bugzilla.redhat.com/2105430">https://bugzilla.redhat.com/2105430</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2022-6595.html">https://errata.almalinux.org/9/ALSA-2022-6595.html</a>
+          <a href="https://github.com/chalk/ansi-regex">https://github.com/chalk/ansi-regex</a>
+          <a href="https://github.com/chalk/ansi-regex/commit/419250fa510bf31b4cc672e76537a64f9332e1f1">https://github.com/chalk/ansi-regex/commit/419250fa510bf31b4cc672e76537a64f9332e1f1</a>
+          <a href="https://github.com/chalk/ansi-regex/commit/75a657da7af875b2e2724fd6331bf0a4b23d3c9a">https://github.com/chalk/ansi-regex/commit/75a657da7af875b2e2724fd6331bf0a4b23d3c9a</a>
+          <a href="https://github.com/chalk/ansi-regex/commit/8d1d7cdb586269882c4bdc1b7325d0c58c8f76f9">https://github.com/chalk/ansi-regex/commit/8d1d7cdb586269882c4bdc1b7325d0c58c8f76f9</a>
+          <a href="https://github.com/chalk/ansi-regex/commit/c3c0b3f2736b9c01feec0fef33980c43720dcde8">https://github.com/chalk/ansi-regex/commit/c3c0b3f2736b9c01feec0fef33980c43720dcde8</a>
+          <a href="https://github.com/chalk/ansi-regex/issues/38#issuecomment-924086311">https://github.com/chalk/ansi-regex/issues/38#issuecomment-924086311</a>
+          <a href="https://github.com/chalk/ansi-regex/issues/38#issuecomment-925924774">https://github.com/chalk/ansi-regex/issues/38#issuecomment-925924774</a>
+          <a href="https://github.com/chalk/ansi-regex/releases/tag/v6.0.1">https://github.com/chalk/ansi-regex/releases/tag/v6.0.1</a>
+          <a href="https://huntr.dev/bounties/5b3cf33b-ede0-4398-9974-800876dfd994">https://huntr.dev/bounties/5b3cf33b-ede0-4398-9974-800876dfd994</a>
+          <a href="https://linux.oracle.com/cve/CVE-2021-3807.html">https://linux.oracle.com/cve/CVE-2021-3807.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2022-6595.html">https://linux.oracle.com/errata/ELSA-2022-6595.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3807">https://nvd.nist.gov/vuln/detail/CVE-2021-3807</a>
+          <a href="https://security.netapp.com/advisory/ntap-20221014-0002">https://security.netapp.com/advisory/ntap-20221014-0002</a>
+          <a href="https://security.netapp.com/advisory/ntap-20221014-0002/">https://security.netapp.com/advisory/ntap-20221014-0002/</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2021-3807">https://www.cve.org/CVERecord?id=CVE-2021-3807</a>
+          <a href="https://www.oracle.com/security-alerts/cpuapr2022.html">https://www.oracle.com/security-alerts/cpuapr2022.html</a>
+        </td>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">brace-expansion</td>
+        <td>CVE-2025-5889</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">1.1.11</td>
+        <td>2.0.2, 1.1.12, 3.0.1, 4.0.1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://gist.github.com/mmmsssttt404/37a40ce7d6e5ca604858fe30814d9466">https://gist.github.com/mmmsssttt404/37a40ce7d6e5ca604858fe30814d9466</a>
+          <a href="https://github.com/juliangruber/brace-expansion">https://github.com/juliangruber/brace-expansion</a>
+          <a href="https://github.com/juliangruber/brace-expansion/commit/0b6a9781e18e9d2769bb2931f4856d1360243ed2">https://github.com/juliangruber/brace-expansion/commit/0b6a9781e18e9d2769bb2931f4856d1360243ed2</a>
+          <a href="https://github.com/juliangruber/brace-expansion/commit/15f9b3c75ebf5988198241fecaebdc45eff28a9f">https://github.com/juliangruber/brace-expansion/commit/15f9b3c75ebf5988198241fecaebdc45eff28a9f</a>
+          <a href="https://github.com/juliangruber/brace-expansion/commit/36603d5f3599a37af9e85eda30acd7d28599c36e">https://github.com/juliangruber/brace-expansion/commit/36603d5f3599a37af9e85eda30acd7d28599c36e</a>
+          <a href="https://github.com/juliangruber/brace-expansion/commit/c3c73c8b088defc70851843be88ccc3af08e7217">https://github.com/juliangruber/brace-expansion/commit/c3c73c8b088defc70851843be88ccc3af08e7217</a>
+          <a href="https://github.com/juliangruber/brace-expansion/pull/65/commits/a5b98a4f30d7813266b221435e1eaaf25a1b0ac5">https://github.com/juliangruber/brace-expansion/pull/65/commits/a5b98a4f30d7813266b221435e1eaaf25a1b0ac5</a>
+          <a href="https://github.com/juliangruber/brace-expansion/releases/tag/v4.0.1">https://github.com/juliangruber/brace-expansion/releases/tag/v4.0.1</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-5889">https://nvd.nist.gov/vuln/detail/CVE-2025-5889</a>
+          <a href="https://vuldb.com/?ctiid.311660">https://vuldb.com/?ctiid.311660</a>
+          <a href="https://vuldb.com/?id.311660">https://vuldb.com/?id.311660</a>
+          <a href="https://vuldb.com/?submit.585717">https://vuldb.com/?submit.585717</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">connect</td>
+        <td>CVE-2013-7370</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">2.6.0</td>
+        <td>&gt;=2.8.1</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2014/04/21/2">http://www.openwall.com/lists/oss-security/2014/04/21/2</a>
+          <a href="http://www.openwall.com/lists/oss-security/2014/05/13/1">http://www.openwall.com/lists/oss-security/2014/05/13/1</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2013-7370">https://access.redhat.com/security/cve/CVE-2013-7370</a>
+          <a href="https://access.redhat.com/security/cve/cve-2013-7370">https://access.redhat.com/security/cve/cve-2013-7370</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2013-7370">https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2013-7370</a>
+          <a href="https://bugzilla.suse.com/show_bug.cgi?id=CVE-2013-7370">https://bugzilla.suse.com/show_bug.cgi?id=CVE-2013-7370</a>
+          <a href="https://github.com/senchalabs/connect/commit/126187c4e12162e231b87350740045e5bb06e93a">https://github.com/senchalabs/connect/commit/126187c4e12162e231b87350740045e5bb06e93a</a>
+          <a href="https://github.com/senchalabs/connect/commit/277e5aad6a95d00f55571a9a0e11f2fa190d8135">https://github.com/senchalabs/connect/commit/277e5aad6a95d00f55571a9a0e11f2fa190d8135</a>
+          <a href="https://github.com/senchalabs/connect/issues/831">https://github.com/senchalabs/connect/issues/831</a>
+          <a href="https://nodesecurity.io/advisories/methodOverride_Middleware_Reflected_Cross-Site_Scripting">https://nodesecurity.io/advisories/methodOverride_Middleware_Reflected_Cross-Site_Scripting</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2013-7370">https://nvd.nist.gov/vuln/detail/CVE-2013-7370</a>
+          <a href="https://security-tracker.debian.org/tracker/CVE-2013-7370">https://security-tracker.debian.org/tracker/CVE-2013-7370</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2013-7370">https://www.cve.org/CVERecord?id=CVE-2013-7370</a>
+          <a href="https://www.npmjs.com/advisories/3">https://www.npmjs.com/advisories/3</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">connect</td>
+        <td>CVE-2013-7371</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">2.6.0</td>
+        <td>&gt;=2.8.1</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2014/04/21/2">http://www.openwall.com/lists/oss-security/2014/04/21/2</a>
+          <a href="http://www.openwall.com/lists/oss-security/2014/05/13/1">http://www.openwall.com/lists/oss-security/2014/05/13/1</a>
+          <a href="https://access.redhat.com/security/cve/cve-2013-7371">https://access.redhat.com/security/cve/cve-2013-7371</a>
+          <a href="https://exchange.xforce.ibmcloud.com/vulnerabilities/92710">https://exchange.xforce.ibmcloud.com/vulnerabilities/92710</a>
+          <a href="https://github.com/senchalabs/connect">https://github.com/senchalabs/connect</a>
+          <a href="https://github.com/senchalabs/connect/commit/126187c4e12162e231b87350740045e5bb06e93a">https://github.com/senchalabs/connect/commit/126187c4e12162e231b87350740045e5bb06e93a</a>
+          <a href="https://github.com/senchalabs/connect/commit/277e5aad6a95d00f55571a9a0e11f2fa190d8135">https://github.com/senchalabs/connect/commit/277e5aad6a95d00f55571a9a0e11f2fa190d8135</a>
+          <a href="https://github.com/senchalabs/connect/issues/831">https://github.com/senchalabs/connect/issues/831</a>
+          <a href="https://nodesecurity.io/advisories/methodOverride_Middleware_Reflected_Cross-Site_Scripting">https://nodesecurity.io/advisories/methodOverride_Middleware_Reflected_Cross-Site_Scripting</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2013-7371">https://nvd.nist.gov/vuln/detail/CVE-2013-7371</a>
+          <a href="https://security-tracker.debian.org/tracker/CVE-2013-7371">https://security-tracker.debian.org/tracker/CVE-2013-7371</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">connect</td>
+        <td>CVE-2018-3717</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">2.6.0</td>
+        <td>2.14.0</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2018-3717">https://access.redhat.com/security/cve/CVE-2018-3717</a>
+          <a href="https://github.com/JacksonTian/anywhere/issues/33#issuecomment-366527448">https://github.com/JacksonTian/anywhere/issues/33#issuecomment-366527448</a>
+          <a href="https://github.com/advisories/GHSA-rch9-xh7r-mqgw">https://github.com/advisories/GHSA-rch9-xh7r-mqgw</a>
+          <a href="https://github.com/senchalabs/connect/commit/6d5dd30075d2bc4ee97afdbbe3d9d98d8d52d74b">https://github.com/senchalabs/connect/commit/6d5dd30075d2bc4ee97afdbbe3d9d98d8d52d74b</a>
+          <a href="https://hackerone.com/reports/309394">https://hackerone.com/reports/309394</a>
+          <a href="https://hackerone.com/reports/309641">https://hackerone.com/reports/309641</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2018-3717">https://nvd.nist.gov/vuln/detail/CVE-2018-3717</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2018-3717">https://www.cve.org/CVERecord?id=CVE-2018-3717</a>
+          <a href="https://www.npmjs.com/advisories/584">https://www.npmjs.com/advisories/584</a>
+          <a href="https://www.npmjs.com/advisories/595">https://www.npmjs.com/advisories/595</a>
+        </td>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">cookie</td>
+        <td>CVE-2024-47764</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">0.0.4</td>
+        <td>0.7.0</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2024-47764">https://access.redhat.com/security/cve/CVE-2024-47764</a>
+          <a href="https://github.com/jshttp/cookie">https://github.com/jshttp/cookie</a>
+          <a href="https://github.com/jshttp/cookie/commit/e10042845354fea83bd8f34af72475eed1dadf5c">https://github.com/jshttp/cookie/commit/e10042845354fea83bd8f34af72475eed1dadf5c</a>
+          <a href="https://github.com/jshttp/cookie/pull/167">https://github.com/jshttp/cookie/pull/167</a>
+          <a href="https://github.com/jshttp/cookie/security/advisories/GHSA-pxg6-pf52-xh8x">https://github.com/jshttp/cookie/security/advisories/GHSA-pxg6-pf52-xh8x</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-47764">https://nvd.nist.gov/vuln/detail/CVE-2024-47764</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2024-47764">https://www.cve.org/CVERecord?id=CVE-2024-47764</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">cross-spawn</td>
+        <td>CVE-2024-21538</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">5.1.0</td>
+        <td>7.0.5, 6.0.6</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2024-21538">https://access.redhat.com/security/cve/CVE-2024-21538</a>
+          <a href="https://github.com/moxystudio/node-cross-spawn">https://github.com/moxystudio/node-cross-spawn</a>
+          <a href="https://github.com/moxystudio/node-cross-spawn/commit/5ff3a07d9add449021d806e45c4168203aa833ff">https://github.com/moxystudio/node-cross-spawn/commit/5ff3a07d9add449021d806e45c4168203aa833ff</a>
+          <a href="https://github.com/moxystudio/node-cross-spawn/commit/640d391fde65388548601d95abedccc12943374f">https://github.com/moxystudio/node-cross-spawn/commit/640d391fde65388548601d95abedccc12943374f</a>
+          <a href="https://github.com/moxystudio/node-cross-spawn/commit/d35c865b877d2f9ded7c1ed87521c2fdb689c8dd">https://github.com/moxystudio/node-cross-spawn/commit/d35c865b877d2f9ded7c1ed87521c2fdb689c8dd</a>
+          <a href="https://github.com/moxystudio/node-cross-spawn/issues/165">https://github.com/moxystudio/node-cross-spawn/issues/165</a>
+          <a href="https://github.com/moxystudio/node-cross-spawn/pull/160">https://github.com/moxystudio/node-cross-spawn/pull/160</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-21538">https://nvd.nist.gov/vuln/detail/CVE-2024-21538</a>
+          <a href="https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-8366349">https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-8366349</a>
+          <a href="https://security.snyk.io/vuln/SNYK-JS-CROSSSPAWN-8303230">https://security.snyk.io/vuln/SNYK-JS-CROSSSPAWN-8303230</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2024-21538">https://www.cve.org/CVERecord?id=CVE-2024-21538</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">express</td>
+        <td>CVE-2014-6393</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.0.0</td>
+        <td>&gt;=3.11 &lt;4, &gt;=4.5</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2014-6393">https://access.redhat.com/security/cve/CVE-2014-6393</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1203190">https://bugzilla.redhat.com/show_bug.cgi?id=1203190</a>
+          <a href="https://github.com/advisories/GHSA-gpvr-g6gh-9mc2">https://github.com/advisories/GHSA-gpvr-g6gh-9mc2</a>
+          <a href="https://nodesecurity.io/advisories/express-no-charset-in-content-type-header">https://nodesecurity.io/advisories/express-no-charset-in-content-type-header</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2014-6393">https://nvd.nist.gov/vuln/detail/CVE-2014-6393</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2014-6393">https://www.cve.org/CVERecord?id=CVE-2014-6393</a>
+          <a href="https://www.npmjs.com/advisories/8">https://www.npmjs.com/advisories/8</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">express</td>
+        <td>CVE-2024-10491</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.0.0</td>
+        <td>4.0.0-rc1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2024-10491">https://access.redhat.com/security/cve/CVE-2024-10491</a>
+          <a href="https://github.com/expressjs/express">https://github.com/expressjs/express</a>
+          <a href="https://github.com/expressjs/express/issues/6222">https://github.com/expressjs/express/issues/6222</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-10491">https://nvd.nist.gov/vuln/detail/CVE-2024-10491</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2024-10491">https://www.cve.org/CVERecord?id=CVE-2024-10491</a>
+          <a href="https://www.herodevs.com/vulnerability-directory/cve-2024-10491">https://www.herodevs.com/vulnerability-directory/cve-2024-10491</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">express</td>
+        <td>CVE-2024-29041</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.0.0</td>
+        <td>4.19.2, 5.0.0-beta.3</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2024-29041">https://access.redhat.com/security/cve/CVE-2024-29041</a>
+          <a href="https://expressjs.com/en/4x/api.html#res.location">https://expressjs.com/en/4x/api.html#res.location</a>
+          <a href="https://github.com/expressjs/express">https://github.com/expressjs/express</a>
+          <a href="https://github.com/expressjs/express/commit/0867302ddbde0e9463d0564fea5861feb708c2dd">https://github.com/expressjs/express/commit/0867302ddbde0e9463d0564fea5861feb708c2dd</a>
+          <a href="https://github.com/expressjs/express/commit/0b746953c4bd8e377123527db11f9cd866e39f94">https://github.com/expressjs/express/commit/0b746953c4bd8e377123527db11f9cd866e39f94</a>
+          <a href="https://github.com/expressjs/express/pull/5539">https://github.com/expressjs/express/pull/5539</a>
+          <a href="https://github.com/expressjs/express/security/advisories/GHSA-rv95-896h-c2vc">https://github.com/expressjs/express/security/advisories/GHSA-rv95-896h-c2vc</a>
+          <a href="https://github.com/koajs/koa/issues/1800">https://github.com/koajs/koa/issues/1800</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-29041">https://nvd.nist.gov/vuln/detail/CVE-2024-29041</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2024-29041">https://www.cve.org/CVERecord?id=CVE-2024-29041</a>
+        </td>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">express</td>
+        <td>CVE-2024-43796</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">3.0.0</td>
+        <td>4.20.0, 5.0.0</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2024-43796">https://access.redhat.com/security/cve/CVE-2024-43796</a>
+          <a href="https://github.com/expressjs/express">https://github.com/expressjs/express</a>
+          <a href="https://github.com/expressjs/express/commit/54271f69b511fea198471e6ff3400ab805d6b553">https://github.com/expressjs/express/commit/54271f69b511fea198471e6ff3400ab805d6b553</a>
+          <a href="https://github.com/expressjs/express/security/advisories/GHSA-qw6h-vgh9-j6wx">https://github.com/expressjs/express/security/advisories/GHSA-qw6h-vgh9-j6wx</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-43796">https://nvd.nist.gov/vuln/detail/CVE-2024-43796</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2024-43796">https://www.cve.org/CVERecord?id=CVE-2024-43796</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">fresh</td>
+        <td>CVE-2017-16119</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">0.1.0</td>
+        <td>0.5.2</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2017-16119">https://access.redhat.com/security/cve/CVE-2017-16119</a>
+          <a href="https://github.com/advisories/GHSA-9qj9-36jm-prpv">https://github.com/advisories/GHSA-9qj9-36jm-prpv</a>
+          <a href="https://nodesecurity.io/advisories/526">https://nodesecurity.io/advisories/526</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2017-16119">https://nvd.nist.gov/vuln/detail/CVE-2017-16119</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2017-16119">https://www.cve.org/CVERecord?id=CVE-2017-16119</a>
+          <a href="https://www.npmjs.com/advisories/526">https://www.npmjs.com/advisories/526</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">got</td>
+        <td>CVE-2022-33987</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">6.7.1</td>
+        <td>12.1.0, 11.8.5</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/errata/RHSA-2022:6595">https://access.redhat.com/errata/RHSA-2022:6595</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2022-33987">https://access.redhat.com/security/cve/CVE-2022-33987</a>
+          <a href="https://bugzilla.redhat.com/1907444">https://bugzilla.redhat.com/1907444</a>
+          <a href="https://bugzilla.redhat.com/1945459">https://bugzilla.redhat.com/1945459</a>
+          <a href="https://bugzilla.redhat.com/1964461">https://bugzilla.redhat.com/1964461</a>
+          <a href="https://bugzilla.redhat.com/2007557">https://bugzilla.redhat.com/2007557</a>
+          <a href="https://bugzilla.redhat.com/2098556">https://bugzilla.redhat.com/2098556</a>
+          <a href="https://bugzilla.redhat.com/2102001">https://bugzilla.redhat.com/2102001</a>
+          <a href="https://bugzilla.redhat.com/2105422">https://bugzilla.redhat.com/2105422</a>
+          <a href="https://bugzilla.redhat.com/2105426">https://bugzilla.redhat.com/2105426</a>
+          <a href="https://bugzilla.redhat.com/2105428">https://bugzilla.redhat.com/2105428</a>
+          <a href="https://bugzilla.redhat.com/2105430">https://bugzilla.redhat.com/2105430</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2022-6595.html">https://errata.almalinux.org/9/ALSA-2022-6595.html</a>
+          <a href="https://github.com/sindresorhus/got">https://github.com/sindresorhus/got</a>
+          <a href="https://github.com/sindresorhus/got/commit/861ccd9ac2237df762a9e2beed7edd88c60782dc">https://github.com/sindresorhus/got/commit/861ccd9ac2237df762a9e2beed7edd88c60782dc</a>
+          <a href="https://github.com/sindresorhus/got/compare/v12.0.3...v12.1.0">https://github.com/sindresorhus/got/compare/v12.0.3...v12.1.0</a>
+          <a href="https://github.com/sindresorhus/got/pull/2047">https://github.com/sindresorhus/got/pull/2047</a>
+          <a href="https://github.com/sindresorhus/got/releases/tag/v11.8.5">https://github.com/sindresorhus/got/releases/tag/v11.8.5</a>
+          <a href="https://github.com/sindresorhus/got/releases/tag/v12.1.0">https://github.com/sindresorhus/got/releases/tag/v12.1.0</a>
+          <a href="https://linux.oracle.com/cve/CVE-2022-33987.html">https://linux.oracle.com/cve/CVE-2022-33987.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2022-6595.html">https://linux.oracle.com/errata/ELSA-2022-6595.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2022-33987">https://nvd.nist.gov/vuln/detail/CVE-2022-33987</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2022-33987">https://www.cve.org/CVERecord?id=CVE-2022-33987</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">http-cache-semantics</td>
+        <td>CVE-2022-25881</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">3.8.1</td>
+        <td>4.1.1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/errata/RHSA-2023:2655">https://access.redhat.com/errata/RHSA-2023:2655</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2022-25881">https://access.redhat.com/security/cve/CVE-2022-25881</a>
+          <a href="https://bugzilla.redhat.com/2165824">https://bugzilla.redhat.com/2165824</a>
+          <a href="https://bugzilla.redhat.com/2168631">https://bugzilla.redhat.com/2168631</a>
+          <a href="https://bugzilla.redhat.com/2171935">https://bugzilla.redhat.com/2171935</a>
+          <a href="https://bugzilla.redhat.com/2172190">https://bugzilla.redhat.com/2172190</a>
+          <a href="https://bugzilla.redhat.com/2172204">https://bugzilla.redhat.com/2172204</a>
+          <a href="https://bugzilla.redhat.com/2172217">https://bugzilla.redhat.com/2172217</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2165824">https://bugzilla.redhat.com/show_bug.cgi?id=2165824</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2168631">https://bugzilla.redhat.com/show_bug.cgi?id=2168631</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2171935">https://bugzilla.redhat.com/show_bug.cgi?id=2171935</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2172190">https://bugzilla.redhat.com/show_bug.cgi?id=2172190</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2172204">https://bugzilla.redhat.com/show_bug.cgi?id=2172204</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2172217">https://bugzilla.redhat.com/show_bug.cgi?id=2172217</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2178076">https://bugzilla.redhat.com/show_bug.cgi?id=2178076</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25881">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25881</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4904">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-4904</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23918">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23918</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23920">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23920</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23936">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23936</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-24807">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-24807</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2023-2655.html">https://errata.almalinux.org/9/ALSA-2023-2655.html</a>
+          <a href="https://errata.rockylinux.org/RLSA-2023:2655">https://errata.rockylinux.org/RLSA-2023:2655</a>
+          <a href="https://github.com/kornelski/http-cache-semantics">https://github.com/kornelski/http-cache-semantics</a>
+          <a href="https://github.com/kornelski/http-cache-semantics/blob/master/index.js%23L83">https://github.com/kornelski/http-cache-semantics/blob/master/index.js%23L83</a>
+          <a href="https://github.com/kornelski/http-cache-semantics/commit/560b2d8ef452bbba20ffed69dc155d63ac757b74">https://github.com/kornelski/http-cache-semantics/commit/560b2d8ef452bbba20ffed69dc155d63ac757b74</a>
+          <a href="https://linux.oracle.com/cve/CVE-2022-25881.html">https://linux.oracle.com/cve/CVE-2022-25881.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2023-2655.html">https://linux.oracle.com/errata/ELSA-2023-2655.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2022-25881">https://nvd.nist.gov/vuln/detail/CVE-2022-25881</a>
+          <a href="https://security.netapp.com/advisory/ntap-20230622-0008">https://security.netapp.com/advisory/ntap-20230622-0008</a>
+          <a href="https://security.netapp.com/advisory/ntap-20230622-0008/">https://security.netapp.com/advisory/ntap-20230622-0008/</a>
+          <a href="https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-3253332">https://security.snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-3253332</a>
+          <a href="https://security.snyk.io/vuln/SNYK-JS-HTTPCACHESEMANTICS-3248783">https://security.snyk.io/vuln/SNYK-JS-HTTPCACHESEMANTICS-3248783</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2022-25881">https://www.cve.org/CVERecord?id=CVE-2022-25881</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">ip</td>
+        <td>CVE-2024-29415</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">1.1.5</td>
+        <td></td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2024-29415">https://access.redhat.com/security/cve/CVE-2024-29415</a>
+          <a href="https://cosmosofcyberspace.github.io/npm_ip_cve/npm_ip_cve.html">https://cosmosofcyberspace.github.io/npm_ip_cve/npm_ip_cve.html</a>
+          <a href="https://github.com/indutny/node-ip">https://github.com/indutny/node-ip</a>
+          <a href="https://github.com/indutny/node-ip/issues/150">https://github.com/indutny/node-ip/issues/150</a>
+          <a href="https://github.com/indutny/node-ip/pull/143">https://github.com/indutny/node-ip/pull/143</a>
+          <a href="https://github.com/indutny/node-ip/pull/144">https://github.com/indutny/node-ip/pull/144</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-29415">https://nvd.nist.gov/vuln/detail/CVE-2024-29415</a>
+          <a href="https://security.netapp.com/advisory/ntap-20250117-0010">https://security.netapp.com/advisory/ntap-20250117-0010</a>
+          <a href="https://security.netapp.com/advisory/ntap-20250117-0010/">https://security.netapp.com/advisory/ntap-20250117-0010/</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2024-29415">https://www.cve.org/CVERecord?id=CVE-2024-29415</a>
+        </td>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">ip</td>
+        <td>CVE-2023-42282</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">1.1.5</td>
+        <td>2.0.1, 1.1.9</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2023-42282">https://access.redhat.com/security/cve/CVE-2023-42282</a>
+          <a href="https://cosmosofcyberspace.github.io/npm_ip_cve/npm_ip_cve.html">https://cosmosofcyberspace.github.io/npm_ip_cve/npm_ip_cve.html</a>
+          <a href="https://github.com/JoshGlazebrook/socks/issues/93#issue-2128357447">https://github.com/JoshGlazebrook/socks/issues/93#issue-2128357447</a>
+          <a href="https://github.com/github/advisory-database/pull/3504#issuecomment-1937179999">https://github.com/github/advisory-database/pull/3504#issuecomment-1937179999</a>
+          <a href="https://github.com/indutny/node-ip">https://github.com/indutny/node-ip</a>
+          <a href="https://github.com/indutny/node-ip/commit/32f468f1245574785ec080705737a579be1223aa">https://github.com/indutny/node-ip/commit/32f468f1245574785ec080705737a579be1223aa</a>
+          <a href="https://github.com/indutny/node-ip/commit/6a3ada9b471b09d5f0f5be264911ab564bf67894">https://github.com/indutny/node-ip/commit/6a3ada9b471b09d5f0f5be264911ab564bf67894</a>
+          <a href="https://github.com/indutny/node-ip/pull/138">https://github.com/indutny/node-ip/pull/138</a>
+          <a href="https://huntr.com/bounties/bfc3b23f-ddc0-4ee7-afab-223b07115ed3/">https://huntr.com/bounties/bfc3b23f-ddc0-4ee7-afab-223b07115ed3/</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2023-42282">https://nvd.nist.gov/vuln/detail/CVE-2023-42282</a>
+          <a href="https://security.netapp.com/advisory/ntap-20240315-0008/">https://security.netapp.com/advisory/ntap-20240315-0008/</a>
+          <a href="https://ubuntu.com/security/notices/USN-6643-1">https://ubuntu.com/security/notices/USN-6643-1</a>
+          <a href="https://www.bleepingcomputer.com/news/security/dev-rejects-cve-severity-makes-his-github-repo-read-only/">https://www.bleepingcomputer.com/news/security/dev-rejects-cve-severity-makes-his-github-repo-read-only/</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2023-42282">https://www.cve.org/CVERecord?id=CVE-2023-42282</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">mime</td>
+        <td>CVE-2017-16138</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">1.2.6</td>
+        <td>2.0.3, 1.4.1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2017-16138">https://access.redhat.com/security/cve/CVE-2017-16138</a>
+          <a href="https://github.com/broofa/mime">https://github.com/broofa/mime</a>
+          <a href="https://github.com/broofa/mime/commit/1df903fdeb9ae7eaa048795b8d580ce2c98f40b0">https://github.com/broofa/mime/commit/1df903fdeb9ae7eaa048795b8d580ce2c98f40b0</a>
+          <a href="https://github.com/broofa/mime/commit/855d0c4b8b22e4a80b9401a81f2872058eae274d">https://github.com/broofa/mime/commit/855d0c4b8b22e4a80b9401a81f2872058eae274d</a>
+          <a href="https://github.com/broofa/node-mime/commit/1df903fdeb9ae7eaa048795b8d580ce2c98f40b0 (2.x)">https://github.com/broofa/node-mime/commit/1df903fdeb9ae7eaa048795b8d580ce2c98f40b0 (2.x)</a>
+          <a href="https://github.com/broofa/node-mime/commit/855d0c4b8b22e4a80b9401a81f2872058eae274d (1.x)">https://github.com/broofa/node-mime/commit/855d0c4b8b22e4a80b9401a81f2872058eae274d (1.x)</a>
+          <a href="https://github.com/broofa/node-mime/issues/167">https://github.com/broofa/node-mime/issues/167</a>
+          <a href="https://nodesecurity.io/advisories/535">https://nodesecurity.io/advisories/535</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2017-16138">https://nvd.nist.gov/vuln/detail/CVE-2017-16138</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2017-16138">https://www.cve.org/CVERecord?id=CVE-2017-16138</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">qs</td>
+        <td>CVE-2014-10064</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">0.5.1</td>
+        <td>1.0.0</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/advisories/GHSA-f9cm-p3w6-xvr3">https://github.com/advisories/GHSA-f9cm-p3w6-xvr3</a>
+          <a href="https://nodesecurity.io/advisories/28">https://nodesecurity.io/advisories/28</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2014-10064">https://nvd.nist.gov/vuln/detail/CVE-2014-10064</a>
+          <a href="https://www.npmjs.com/advisories/28">https://www.npmjs.com/advisories/28</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">qs</td>
+        <td>CVE-2014-7191</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">0.5.1</td>
+        <td>&gt;= 1.x</td>
+        <td class="links" data-more-links="off">
+          <a href="http://secunia.com/advisories/60026">http://secunia.com/advisories/60026</a>
+          <a href="http://secunia.com/advisories/62170">http://secunia.com/advisories/62170</a>
+          <a href="http://www-01.ibm.com/support/docview.wss?uid=swg21685987">http://www-01.ibm.com/support/docview.wss?uid=swg21685987</a>
+          <a href="http://www-01.ibm.com/support/docview.wss?uid=swg21687263">http://www-01.ibm.com/support/docview.wss?uid=swg21687263</a>
+          <a href="http://www-01.ibm.com/support/docview.wss?uid=swg21687928">http://www-01.ibm.com/support/docview.wss?uid=swg21687928</a>
+          <a href="https://access.redhat.com/errata/RHSA-2016:1380">https://access.redhat.com/errata/RHSA-2016:1380</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2014-7191">https://access.redhat.com/security/cve/CVE-2014-7191</a>
+          <a href="https://exchange.xforce.ibmcloud.com/vulnerabilities/96729">https://exchange.xforce.ibmcloud.com/vulnerabilities/96729</a>
+          <a href="https://github.com/advisories/GHSA-jjv7-qpx3-h62q">https://github.com/advisories/GHSA-jjv7-qpx3-h62q</a>
+          <a href="https://github.com/raymondfeng/node-querystring/commit/43a604b7847e56bba49d0ce3e222fe89569354d8">https://github.com/raymondfeng/node-querystring/commit/43a604b7847e56bba49d0ce3e222fe89569354d8</a>
+          <a href="https://github.com/visionmedia/node-querystring">https://github.com/visionmedia/node-querystring</a>
+          <a href="https://github.com/visionmedia/node-querystring/issues/104">https://github.com/visionmedia/node-querystring/issues/104</a>
+          <a href="https://nodesecurity.io/advisories/qs_dos_memory_exhaustion">https://nodesecurity.io/advisories/qs_dos_memory_exhaustion</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2014-7191">https://nvd.nist.gov/vuln/detail/CVE-2014-7191</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2014-7191">https://www.cve.org/CVERecord?id=CVE-2014-7191</a>
+          <a href="https://www.npmjs.com/advisories/29">https://www.npmjs.com/advisories/29</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">qs</td>
+        <td>CVE-2017-1000048</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">0.5.1</td>
+        <td>6.0.4, 6.1.2, 6.2.3, 6.3.2</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/errata/RHSA-2017:2672">https://access.redhat.com/errata/RHSA-2017:2672</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2017-1000048">https://access.redhat.com/security/cve/CVE-2017-1000048</a>
+          <a href="https://github.com/ljharb/qs">https://github.com/ljharb/qs</a>
+          <a href="https://github.com/ljharb/qs/commit/beade029171b8cef9cee0d03ebe577e2dd84976d">https://github.com/ljharb/qs/commit/beade029171b8cef9cee0d03ebe577e2dd84976d</a>
+          <a href="https://github.com/ljharb/qs/issues/200">https://github.com/ljharb/qs/issues/200</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2017-1000048">https://nvd.nist.gov/vuln/detail/CVE-2017-1000048</a>
+          <a href="https://snyk.io/vuln/npm:qs:20170213">https://snyk.io/vuln/npm:qs:20170213</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2017-1000048">https://www.cve.org/CVERecord?id=CVE-2017-1000048</a>
+          <a href="https://www.npmjs.com/advisories/1469">https://www.npmjs.com/advisories/1469</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">qs</td>
+        <td>CVE-2022-24999</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">0.5.1</td>
+        <td>6.10.3, 6.9.7, 6.8.3, 6.7.3, 6.6.1, 6.5.3, 6.4.1, 6.3.3, 6.2.4</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/errata/RHSA-2023:0050">https://access.redhat.com/errata/RHSA-2023:0050</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2022-24999">https://access.redhat.com/security/cve/CVE-2022-24999</a>
+          <a href="https://bugzilla.redhat.com/2044591">https://bugzilla.redhat.com/2044591</a>
+          <a href="https://bugzilla.redhat.com/2066009">https://bugzilla.redhat.com/2066009</a>
+          <a href="https://bugzilla.redhat.com/2134609">https://bugzilla.redhat.com/2134609</a>
+          <a href="https://bugzilla.redhat.com/2140911">https://bugzilla.redhat.com/2140911</a>
+          <a href="https://bugzilla.redhat.com/2150323">https://bugzilla.redhat.com/2150323</a>
+          <a href="https://errata.almalinux.org/8/ALSA-2023-0050.html">https://errata.almalinux.org/8/ALSA-2023-0050.html</a>
+          <a href="https://github.com/expressjs/express/releases/tag/4.17.3">https://github.com/expressjs/express/releases/tag/4.17.3</a>
+          <a href="https://github.com/ljharb/qs">https://github.com/ljharb/qs</a>
+          <a href="https://github.com/ljharb/qs/commit/4310742efbd8c03f6495f07906b45213da0a32ec">https://github.com/ljharb/qs/commit/4310742efbd8c03f6495f07906b45213da0a32ec</a>
+          <a href="https://github.com/ljharb/qs/commit/727ef5d34605108acb3513f72d5435972ed15b68">https://github.com/ljharb/qs/commit/727ef5d34605108acb3513f72d5435972ed15b68</a>
+          <a href="https://github.com/ljharb/qs/commit/73205259936317b40f447c5cdb71c5b341848e1b">https://github.com/ljharb/qs/commit/73205259936317b40f447c5cdb71c5b341848e1b</a>
+          <a href="https://github.com/ljharb/qs/commit/8b4cc14cda94a5c89341b77e5fe435ec6c41be2d">https://github.com/ljharb/qs/commit/8b4cc14cda94a5c89341b77e5fe435ec6c41be2d</a>
+          <a href="https://github.com/ljharb/qs/commit/ba24e74dd17931f825adb52f5633e48293b584e1">https://github.com/ljharb/qs/commit/ba24e74dd17931f825adb52f5633e48293b584e1</a>
+          <a href="https://github.com/ljharb/qs/commit/e799ba57e573a30c14b67c1889c7c04d508b9105">https://github.com/ljharb/qs/commit/e799ba57e573a30c14b67c1889c7c04d508b9105</a>
+          <a href="https://github.com/ljharb/qs/commit/ed0f5dcbef4b168a8ae299d78b1e4a2e9b1baf1f">https://github.com/ljharb/qs/commit/ed0f5dcbef4b168a8ae299d78b1e4a2e9b1baf1f</a>
+          <a href="https://github.com/ljharb/qs/commit/f945393cfe442fe8c6e62b4156fd35452c0686ee">https://github.com/ljharb/qs/commit/f945393cfe442fe8c6e62b4156fd35452c0686ee</a>
+          <a href="https://github.com/ljharb/qs/commit/fc3682776670524a42e19709ec4a8138d0d7afda">https://github.com/ljharb/qs/commit/fc3682776670524a42e19709ec4a8138d0d7afda</a>
+          <a href="https://github.com/ljharb/qs/pull/428">https://github.com/ljharb/qs/pull/428</a>
+          <a href="https://github.com/n8tz/CVE-2022-24999">https://github.com/n8tz/CVE-2022-24999</a>
+          <a href="https://linux.oracle.com/cve/CVE-2022-24999.html">https://linux.oracle.com/cve/CVE-2022-24999.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2023-0050.html">https://linux.oracle.com/errata/ELSA-2023-0050.html</a>
+          <a href="https://lists.debian.org/debian-lts-announce/2023/01/msg00039.html">https://lists.debian.org/debian-lts-announce/2023/01/msg00039.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2022-24999">https://nvd.nist.gov/vuln/detail/CVE-2022-24999</a>
+          <a href="https://security.netapp.com/advisory/ntap-20230908-0005">https://security.netapp.com/advisory/ntap-20230908-0005</a>
+          <a href="https://security.netapp.com/advisory/ntap-20230908-0005/">https://security.netapp.com/advisory/ntap-20230908-0005/</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2022-24999">https://www.cve.org/CVERecord?id=CVE-2022-24999</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">qs</td>
+        <td>NSWG-ECO-28</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">0.5.1</td>
+        <td>&gt;= 1.x</td>
+        <td class="links" data-more-links="off">
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">request</td>
+        <td>CVE-2023-28155</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">2.88.2</td>
+        <td></td>
+        <td class="links" data-more-links="off">
+          <a href="https://doyensec.com/resources/Doyensec_Advisory_RequestSSRF_Q12023.pdf">https://doyensec.com/resources/Doyensec_Advisory_RequestSSRF_Q12023.pdf</a>
+          <a href="https://github.com/cypress-io/request/blob/master/lib/redirect.js#L116">https://github.com/cypress-io/request/blob/master/lib/redirect.js#L116</a>
+          <a href="https://github.com/cypress-io/request/commit/c5bcf21d40fb61feaff21a0e5a2b3934a440024f">https://github.com/cypress-io/request/commit/c5bcf21d40fb61feaff21a0e5a2b3934a440024f</a>
+          <a href="https://github.com/cypress-io/request/pull/28">https://github.com/cypress-io/request/pull/28</a>
+          <a href="https://github.com/cypress-io/request/releases/tag/v3.0.0">https://github.com/cypress-io/request/releases/tag/v3.0.0</a>
+          <a href="https://github.com/github/advisory-database/pull/2500">https://github.com/github/advisory-database/pull/2500</a>
+          <a href="https://github.com/request/request">https://github.com/request/request</a>
+          <a href="https://github.com/request/request/blob/master/lib/redirect.js#L111">https://github.com/request/request/blob/master/lib/redirect.js#L111</a>
+          <a href="https://github.com/request/request/issues/3442">https://github.com/request/request/issues/3442</a>
+          <a href="https://github.com/request/request/pull/3444">https://github.com/request/request/pull/3444</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2023-28155">https://nvd.nist.gov/vuln/detail/CVE-2023-28155</a>
+          <a href="https://security.netapp.com/advisory/ntap-20230413-0007">https://security.netapp.com/advisory/ntap-20230413-0007</a>
+          <a href="https://security.netapp.com/advisory/ntap-20230413-0007/">https://security.netapp.com/advisory/ntap-20230413-0007/</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">semver</td>
+        <td>CVE-2022-25883</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">5.7.1</td>
+        <td>7.5.2, 6.3.1, 5.7.2</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/errata/RHSA-2023:5363">https://access.redhat.com/errata/RHSA-2023:5363</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2022-25883">https://access.redhat.com/security/cve/CVE-2022-25883</a>
+          <a href="https://bugzilla.redhat.com/2216475">https://bugzilla.redhat.com/2216475</a>
+          <a href="https://bugzilla.redhat.com/2230948">https://bugzilla.redhat.com/2230948</a>
+          <a href="https://bugzilla.redhat.com/2230955">https://bugzilla.redhat.com/2230955</a>
+          <a href="https://bugzilla.redhat.com/2230956">https://bugzilla.redhat.com/2230956</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2023-5363.html">https://errata.almalinux.org/9/ALSA-2023-5363.html</a>
+          <a href="https://github.com/advisories/GHSA-c2qf-rxjj-qqgw">https://github.com/advisories/GHSA-c2qf-rxjj-qqgw</a>
+          <a href="https://github.com/npm/node-semver">https://github.com/npm/node-semver</a>
+          <a href="https://github.com/npm/node-semver/blob/main/classes/range.js#L97-L104">https://github.com/npm/node-semver/blob/main/classes/range.js#L97-L104</a>
+          <a href="https://github.com/npm/node-semver/blob/main/classes/range.js%23L97-L104">https://github.com/npm/node-semver/blob/main/classes/range.js%23L97-L104</a>
+          <a href="https://github.com/npm/node-semver/blob/main/internal/re.js#L138">https://github.com/npm/node-semver/blob/main/internal/re.js#L138</a>
+          <a href="https://github.com/npm/node-semver/blob/main/internal/re.js#L160">https://github.com/npm/node-semver/blob/main/internal/re.js#L160</a>
+          <a href="https://github.com/npm/node-semver/blob/main/internal/re.js%23L138">https://github.com/npm/node-semver/blob/main/internal/re.js%23L138</a>
+          <a href="https://github.com/npm/node-semver/blob/main/internal/re.js%23L160">https://github.com/npm/node-semver/blob/main/internal/re.js%23L160</a>
+          <a href="https://github.com/npm/node-semver/commit/2f8fd41487acf380194579ecb6f8b1bbfe116be0">https://github.com/npm/node-semver/commit/2f8fd41487acf380194579ecb6f8b1bbfe116be0</a>
+          <a href="https://github.com/npm/node-semver/commit/717534ee353682f3bcf33e60a8af4292626d4441">https://github.com/npm/node-semver/commit/717534ee353682f3bcf33e60a8af4292626d4441</a>
+          <a href="https://github.com/npm/node-semver/commit/928e56d21150da0413a3333a3148b20e741a920c">https://github.com/npm/node-semver/commit/928e56d21150da0413a3333a3148b20e741a920c</a>
+          <a href="https://github.com/npm/node-semver/pull/564">https://github.com/npm/node-semver/pull/564</a>
+          <a href="https://github.com/npm/node-semver/pull/585">https://github.com/npm/node-semver/pull/585</a>
+          <a href="https://github.com/npm/node-semver/pull/593">https://github.com/npm/node-semver/pull/593</a>
+          <a href="https://linux.oracle.com/cve/CVE-2022-25883.html">https://linux.oracle.com/cve/CVE-2022-25883.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2023-5363.html">https://linux.oracle.com/errata/ELSA-2023-5363.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2022-25883">https://nvd.nist.gov/vuln/detail/CVE-2022-25883</a>
+          <a href="https://security.netapp.com/advisory/ntap-20241025-0004">https://security.netapp.com/advisory/ntap-20241025-0004</a>
+          <a href="https://security.netapp.com/advisory/ntap-20241025-0004/">https://security.netapp.com/advisory/ntap-20241025-0004/</a>
+          <a href="https://security.snyk.io/vuln/SNYK-JS-SEMVER-3247795">https://security.snyk.io/vuln/SNYK-JS-SEMVER-3247795</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2022-25883">https://www.cve.org/CVERecord?id=CVE-2022-25883</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">send</td>
+        <td>CVE-2014-6394</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">0.0.4</td>
+        <td>&gt;= 0.8.4</td>
+        <td class="links" data-more-links="off">
+          <a href="http://lists.apple.com/archives/security-announce/2015/Sep/msg00002.html">http://lists.apple.com/archives/security-announce/2015/Sep/msg00002.html</a>
+          <a href="http://lists.fedoraproject.org/pipermail/package-announce/2014-October/139938.html">http://lists.fedoraproject.org/pipermail/package-announce/2014-October/139938.html</a>
+          <a href="http://lists.fedoraproject.org/pipermail/package-announce/2014-October/140020.html">http://lists.fedoraproject.org/pipermail/package-announce/2014-October/140020.html</a>
+          <a href="http://lists.fedoraproject.org/pipermail/package-announce/2014-September/139415.html">http://lists.fedoraproject.org/pipermail/package-announce/2014-September/139415.html</a>
+          <a href="http://secunia.com/advisories/62170">http://secunia.com/advisories/62170</a>
+          <a href="http://www-01.ibm.com/support/docview.wss?uid=swg21687263">http://www-01.ibm.com/support/docview.wss?uid=swg21687263</a>
+          <a href="http://www.openwall.com/lists/oss-security/2014/09/24/1">http://www.openwall.com/lists/oss-security/2014/09/24/1</a>
+          <a href="http://www.openwall.com/lists/oss-security/2014/09/30/10">http://www.openwall.com/lists/oss-security/2014/09/30/10</a>
+          <a href="http://www.securityfocus.com/bid/70100">http://www.securityfocus.com/bid/70100</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2014-6394">https://access.redhat.com/security/cve/CVE-2014-6394</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1146063">https://bugzilla.redhat.com/show_bug.cgi?id=1146063</a>
+          <a href="https://exchange.xforce.ibmcloud.com/vulnerabilities/96727">https://exchange.xforce.ibmcloud.com/vulnerabilities/96727</a>
+          <a href="https://github.com/advisories/GHSA-xwg4-93c6-3h42">https://github.com/advisories/GHSA-xwg4-93c6-3h42</a>
+          <a href="https://github.com/visionmedia/send">https://github.com/visionmedia/send</a>
+          <a href="https://github.com/visionmedia/send/commit/9c6ca9b2c0b880afd3ff91ce0d211213c5fa5f9a">https://github.com/visionmedia/send/commit/9c6ca9b2c0b880afd3ff91ce0d211213c5fa5f9a</a>
+          <a href="https://github.com/visionmedia/send/pull/59">https://github.com/visionmedia/send/pull/59</a>
+          <a href="https://nodesecurity.io/advisories/send-directory-traversal">https://nodesecurity.io/advisories/send-directory-traversal</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2014-6394">https://nvd.nist.gov/vuln/detail/CVE-2014-6394</a>
+          <a href="https://support.apple.com/HT205217">https://support.apple.com/HT205217</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2014-6394">https://www.cve.org/CVERecord?id=CVE-2014-6394</a>
+          <a href="https://www.npmjs.com/advisories/32">https://www.npmjs.com/advisories/32</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">send</td>
+        <td>CVE-2015-8859</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">0.0.4</td>
+        <td>&gt;=0.11.1</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2016/04/20/11">http://www.openwall.com/lists/oss-security/2016/04/20/11</a>
+          <a href="http://www.securityfocus.com/bid/96435">http://www.securityfocus.com/bid/96435</a>
+          <a href="https://github.com/expressjs/serve-static/blob/master/HISTORY.md#181--2015-01-20">https://github.com/expressjs/serve-static/blob/master/HISTORY.md#181--2015-01-20</a>
+          <a href="https://github.com/pillarjs/send">https://github.com/pillarjs/send</a>
+          <a href="https://github.com/pillarjs/send/commit/98a5b89982b38e79db684177cf94730ce7fc7aed">https://github.com/pillarjs/send/commit/98a5b89982b38e79db684177cf94730ce7fc7aed</a>
+          <a href="https://github.com/pillarjs/send/pull/70">https://github.com/pillarjs/send/pull/70</a>
+          <a href="https://nodesecurity.io/advisories/56">https://nodesecurity.io/advisories/56</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2015-8859">https://nvd.nist.gov/vuln/detail/CVE-2015-8859</a>
+          <a href="https://web.archive.org/web/20200227192016/https://www.securityfocus.com/bid/96435">https://web.archive.org/web/20200227192016/https://www.securityfocus.com/bid/96435</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2015-8859">https://www.cve.org/CVERecord?id=CVE-2015-8859</a>
+        </td>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">send</td>
+        <td>CVE-2024-43799</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">0.0.4</td>
+        <td>0.19.0</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2024-43799">https://access.redhat.com/security/cve/CVE-2024-43799</a>
+          <a href="https://github.com/pillarjs/send">https://github.com/pillarjs/send</a>
+          <a href="https://github.com/pillarjs/send/commit/ae4f2989491b392ae2ef3b0015a019770ae65d35">https://github.com/pillarjs/send/commit/ae4f2989491b392ae2ef3b0015a019770ae65d35</a>
+          <a href="https://github.com/pillarjs/send/security/advisories/GHSA-m6fv-jmcg-4jfg">https://github.com/pillarjs/send/security/advisories/GHSA-m6fv-jmcg-4jfg</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-43799">https://nvd.nist.gov/vuln/detail/CVE-2024-43799</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2024-43799">https://www.cve.org/CVERecord?id=CVE-2024-43799</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">send</td>
+        <td>CVE-2014-6394</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">0.1.0</td>
+        <td>&gt;= 0.8.4</td>
+        <td class="links" data-more-links="off">
+          <a href="http://lists.apple.com/archives/security-announce/2015/Sep/msg00002.html">http://lists.apple.com/archives/security-announce/2015/Sep/msg00002.html</a>
+          <a href="http://lists.fedoraproject.org/pipermail/package-announce/2014-October/139938.html">http://lists.fedoraproject.org/pipermail/package-announce/2014-October/139938.html</a>
+          <a href="http://lists.fedoraproject.org/pipermail/package-announce/2014-October/140020.html">http://lists.fedoraproject.org/pipermail/package-announce/2014-October/140020.html</a>
+          <a href="http://lists.fedoraproject.org/pipermail/package-announce/2014-September/139415.html">http://lists.fedoraproject.org/pipermail/package-announce/2014-September/139415.html</a>
+          <a href="http://secunia.com/advisories/62170">http://secunia.com/advisories/62170</a>
+          <a href="http://www-01.ibm.com/support/docview.wss?uid=swg21687263">http://www-01.ibm.com/support/docview.wss?uid=swg21687263</a>
+          <a href="http://www.openwall.com/lists/oss-security/2014/09/24/1">http://www.openwall.com/lists/oss-security/2014/09/24/1</a>
+          <a href="http://www.openwall.com/lists/oss-security/2014/09/30/10">http://www.openwall.com/lists/oss-security/2014/09/30/10</a>
+          <a href="http://www.securityfocus.com/bid/70100">http://www.securityfocus.com/bid/70100</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2014-6394">https://access.redhat.com/security/cve/CVE-2014-6394</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1146063">https://bugzilla.redhat.com/show_bug.cgi?id=1146063</a>
+          <a href="https://exchange.xforce.ibmcloud.com/vulnerabilities/96727">https://exchange.xforce.ibmcloud.com/vulnerabilities/96727</a>
+          <a href="https://github.com/advisories/GHSA-xwg4-93c6-3h42">https://github.com/advisories/GHSA-xwg4-93c6-3h42</a>
+          <a href="https://github.com/visionmedia/send">https://github.com/visionmedia/send</a>
+          <a href="https://github.com/visionmedia/send/commit/9c6ca9b2c0b880afd3ff91ce0d211213c5fa5f9a">https://github.com/visionmedia/send/commit/9c6ca9b2c0b880afd3ff91ce0d211213c5fa5f9a</a>
+          <a href="https://github.com/visionmedia/send/pull/59">https://github.com/visionmedia/send/pull/59</a>
+          <a href="https://nodesecurity.io/advisories/send-directory-traversal">https://nodesecurity.io/advisories/send-directory-traversal</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2014-6394">https://nvd.nist.gov/vuln/detail/CVE-2014-6394</a>
+          <a href="https://support.apple.com/HT205217">https://support.apple.com/HT205217</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2014-6394">https://www.cve.org/CVERecord?id=CVE-2014-6394</a>
+          <a href="https://www.npmjs.com/advisories/32">https://www.npmjs.com/advisories/32</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">send</td>
+        <td>CVE-2015-8859</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">0.1.0</td>
+        <td>&gt;=0.11.1</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2016/04/20/11">http://www.openwall.com/lists/oss-security/2016/04/20/11</a>
+          <a href="http://www.securityfocus.com/bid/96435">http://www.securityfocus.com/bid/96435</a>
+          <a href="https://github.com/expressjs/serve-static/blob/master/HISTORY.md#181--2015-01-20">https://github.com/expressjs/serve-static/blob/master/HISTORY.md#181--2015-01-20</a>
+          <a href="https://github.com/pillarjs/send">https://github.com/pillarjs/send</a>
+          <a href="https://github.com/pillarjs/send/commit/98a5b89982b38e79db684177cf94730ce7fc7aed">https://github.com/pillarjs/send/commit/98a5b89982b38e79db684177cf94730ce7fc7aed</a>
+          <a href="https://github.com/pillarjs/send/pull/70">https://github.com/pillarjs/send/pull/70</a>
+          <a href="https://nodesecurity.io/advisories/56">https://nodesecurity.io/advisories/56</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2015-8859">https://nvd.nist.gov/vuln/detail/CVE-2015-8859</a>
+          <a href="https://web.archive.org/web/20200227192016/https://www.securityfocus.com/bid/96435">https://web.archive.org/web/20200227192016/https://www.securityfocus.com/bid/96435</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2015-8859">https://www.cve.org/CVERecord?id=CVE-2015-8859</a>
+        </td>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">send</td>
+        <td>CVE-2024-43799</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">0.1.0</td>
+        <td>0.19.0</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2024-43799">https://access.redhat.com/security/cve/CVE-2024-43799</a>
+          <a href="https://github.com/pillarjs/send">https://github.com/pillarjs/send</a>
+          <a href="https://github.com/pillarjs/send/commit/ae4f2989491b392ae2ef3b0015a019770ae65d35">https://github.com/pillarjs/send/commit/ae4f2989491b392ae2ef3b0015a019770ae65d35</a>
+          <a href="https://github.com/pillarjs/send/security/advisories/GHSA-m6fv-jmcg-4jfg">https://github.com/pillarjs/send/security/advisories/GHSA-m6fv-jmcg-4jfg</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-43799">https://nvd.nist.gov/vuln/detail/CVE-2024-43799</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2024-43799">https://www.cve.org/CVERecord?id=CVE-2024-43799</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">tar</td>
+        <td>CVE-2024-28863</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">4.4.19</td>
+        <td>6.2.1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/errata/RHSA-2024:6147">https://access.redhat.com/errata/RHSA-2024:6147</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2024-28863">https://access.redhat.com/security/cve/CVE-2024-28863</a>
+          <a href="https://bugzilla.redhat.com/2293200">https://bugzilla.redhat.com/2293200</a>
+          <a href="https://bugzilla.redhat.com/2296417">https://bugzilla.redhat.com/2296417</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2024-6147.html">https://errata.almalinux.org/9/ALSA-2024-6147.html</a>
+          <a href="https://github.com/isaacs/node-tar">https://github.com/isaacs/node-tar</a>
+          <a href="https://github.com/isaacs/node-tar/commit/fe8cd57da5686f8695415414bda49206a545f7f7">https://github.com/isaacs/node-tar/commit/fe8cd57da5686f8695415414bda49206a545f7f7</a>
+          <a href="https://github.com/isaacs/node-tar/commit/fe8cd57da5686f8695415414bda49206a545f7f7 (v6.2.1)">https://github.com/isaacs/node-tar/commit/fe8cd57da5686f8695415414bda49206a545f7f7 (v6.2.1)</a>
+          <a href="https://github.com/isaacs/node-tar/security/advisories/GHSA-f5x3-32g6-xq36">https://github.com/isaacs/node-tar/security/advisories/GHSA-f5x3-32g6-xq36</a>
+          <a href="https://linux.oracle.com/cve/CVE-2024-28863.html">https://linux.oracle.com/cve/CVE-2024-28863.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2024-6148.html">https://linux.oracle.com/errata/ELSA-2024-6148.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-28863">https://nvd.nist.gov/vuln/detail/CVE-2024-28863</a>
+          <a href="https://security.netapp.com/advisory/ntap-20240524-0005">https://security.netapp.com/advisory/ntap-20240524-0005</a>
+          <a href="https://security.netapp.com/advisory/ntap-20240524-0005/">https://security.netapp.com/advisory/ntap-20240524-0005/</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2024-28863">https://www.cve.org/CVERecord?id=CVE-2024-28863</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">tough-cookie</td>
+        <td>CVE-2023-26136</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">2.5.0</td>
+        <td>4.1.3</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2023-26136">https://access.redhat.com/security/cve/CVE-2023-26136</a>
+          <a href="https://github.com/salesforce/tough-cookie">https://github.com/salesforce/tough-cookie</a>
+          <a href="https://github.com/salesforce/tough-cookie/commit/12d474791bb856004e858fdb1c47b7608d09cf6e">https://github.com/salesforce/tough-cookie/commit/12d474791bb856004e858fdb1c47b7608d09cf6e</a>
+          <a href="https://github.com/salesforce/tough-cookie/issues/282">https://github.com/salesforce/tough-cookie/issues/282</a>
+          <a href="https://github.com/salesforce/tough-cookie/releases/tag/v4.1.3">https://github.com/salesforce/tough-cookie/releases/tag/v4.1.3</a>
+          <a href="https://lists.debian.org/debian-lts-announce/2023/07/msg00010.html">https://lists.debian.org/debian-lts-announce/2023/07/msg00010.html</a>
+          <a href="https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3HUE6ZR5SL73KHL7XUPAOEL6SB7HUDT2">https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3HUE6ZR5SL73KHL7XUPAOEL6SB7HUDT2</a>
+          <a href="https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3HUE6ZR5SL73KHL7XUPAOEL6SB7HUDT2/">https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3HUE6ZR5SL73KHL7XUPAOEL6SB7HUDT2/</a>
+          <a href="https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6PVVPNSAGSDS63HQ74PJ7MZ3MU5IYNVZ">https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6PVVPNSAGSDS63HQ74PJ7MZ3MU5IYNVZ</a>
+          <a href="https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6PVVPNSAGSDS63HQ74PJ7MZ3MU5IYNVZ/">https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6PVVPNSAGSDS63HQ74PJ7MZ3MU5IYNVZ/</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2023-26136">https://nvd.nist.gov/vuln/detail/CVE-2023-26136</a>
+          <a href="https://security.netapp.com/advisory/ntap-20240621-0006">https://security.netapp.com/advisory/ntap-20240621-0006</a>
+          <a href="https://security.netapp.com/advisory/ntap-20240621-0006/">https://security.netapp.com/advisory/ntap-20240621-0006/</a>
+          <a href="https://security.snyk.io/vuln/SNYK-JS-TOUGHCOOKIE-5672873">https://security.snyk.io/vuln/SNYK-JS-TOUGHCOOKIE-5672873</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2023-26136">https://www.cve.org/CVERecord?id=CVE-2023-26136</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+    </table>
+  </body>
+</html>

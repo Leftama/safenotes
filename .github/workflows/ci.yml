@@ -1,0 +1,17 @@
+name: DevSecOps CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Instalar dependencias
+        run: npm install
+      - name: Ejecutar pruebas (si existieran)
+        run: echo "Sin pruebas definidas aún"
+      - name: Análisis de dependencias
+        run: |
+          sudo apt install -y dependency-check
+          dependency-check --project "SafeNotes" --scan . --format "HTML"
