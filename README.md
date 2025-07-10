@@ -146,7 +146,9 @@ Al usar express@3.0.0, el análisis reporta varias vulnerabilidades conocidas:
 ## Reporte de Seguridad
 El reporte generado por OWASP Dependency-Check se publica como artefacto del workflow.
 
-### Puedes descargarlo desde la pestaña Actions en GitHub luego de cada ejecución exitosa.
+Puedes descargarlo desde la pestaña Actions en GitHub luego de cada ejecución exitosa.
+
+---
 
 ## Buenas Prácticas DevSecOps Aplicadas
     - Seguridad automatizada desde etapas tempranas del desarrollo (Shift Left).
