@@ -6,26 +6,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Clonar repositorio
+      - name: 📥 Clonar repositorio
         uses: actions/checkout@v3
 
-      - name: Instalar dependencias Node.js
+      - name: 📦 Instalar dependencias Node.js
         run: npm install
 
-      - name: Ejecutar pruebas (si existieran)
+      - name: 🧪 Ejecutar pruebas (si existieran)
         run: echo "Sin pruebas definidas aún"
 
-      - name: Instalar OWASP Dependency-Check manualmente
+      - name: 🛠️ Descargar OWASP Dependency-Check
         run: |
           wget https://github.com/jeremylong/DependencyCheck/releases/download/v8.4.0/dependency-check-8.4.0-release.zip
           unzip dependency-check-8.4.0-release.zip -d dependency-check
-          sudo ln -s $PWD/dependency-check/bin/dependency-check.sh /usr/local/bin/dependency-check
+          chmod +x dependency-check/bin/dependency-check.sh  # Asegurar permisos
 
-      - name: Análisis de dependencias con Dependency-Check
+      - name: 🔍 Ejecutar Dependency-Check (SCA)
         run: |
-          dependency-check --project "safenotes" --scan . --format "HTML" --out dependency-check-report
+          ./dependency-check/bin/dependency-check.sh \
+            --project "safenotes" \
+            --scan . \
+            --format "HTML" \
+            --out dependency-check-report
 
-      - name: Subir reporte de análisis como artefacto
+      - name: 📤 Subir reporte como artefacto
         uses: actions/upload-artifact@v4
         with:
           name: dependency-check-report
