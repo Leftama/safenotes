@@ -15,11 +15,12 @@ jobs:
       - name: 🧪 Ejecutar pruebas (si existieran)
         run: echo "Sin pruebas definidas aún"
 
-      - name: 🛠️ Descargar OWASP Dependency-Check
+      - name: 🛠️ Descargar y preparar OWASP Dependency-Check
         run: |
           wget https://github.com/jeremylong/DependencyCheck/releases/download/v8.4.0/dependency-check-8.4.0-release.zip
-          unzip dependency-check-8.4.0-release.zip -d dependency-check
-          chmod +x dependency-check/bin/dependency-check.sh  # Asegurar permisos
+          unzip -q dependency-check-8.4.0-release.zip -d temp
+          mv temp/dependency-check-* dependency-check
+          chmod +x dependency-check/bin/dependency-check.sh
 
       - name: 🔍 Ejecutar Dependency-Check (SCA)
         run: |
