@@ -79,7 +79,7 @@ node app.js
 ---
 
 ## CI/CD DevSecOps con GitHub Actions
-# Este proyecto incluye un pipeline automatizado que:
+### Este proyecto incluye un pipeline automatizado que:
 
     1.Instala dependencias.
     2.Descarga y prepara OWASP Dependency-Check.
@@ -139,7 +139,7 @@ Al usar express@3.0.0, el análisis reporta varias vulnerabilidades conocidas:
     - CVE-2015-8855	DoS por procesamiento de JSON grandes	Media
     - CVE-2016-10540	Bypass de autenticación por mal parsing de rutas	Alta
 
-### Recomendación: actualizar a express@4.18.2 o superior.
+Recomendación: actualizar a express@4.18.2 o superior.
 
 ---
 
