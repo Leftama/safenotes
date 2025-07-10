@@ -14,4 +14,4 @@ jobs:
       - name: Análisis de dependencias
         run: |
           sudo apt install -y dependency-check
-          dependency-check --project "SafeNotes" --scan . --format "HTML"
+          dependency-check --project "safenotes" --scan . --format "HTML"
