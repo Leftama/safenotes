@@ -31,7 +31,8 @@ jobs:
             --project "safenotes" \
             --scan . \
             --format "HTML" \
-            --out dependency-check-report
+            --out dependency-check-report \
+            --disableAssembly
 
       - name: Subir reporte como artefacto
         uses: actions/upload-artifact@v4
