@@ -6,16 +6,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Clonar repositorio
+      - name: Clonar repositorio
         uses: actions/checkout@v3
 
-      - name: 📦 Instalar dependencias Node.js
+      - name: Instalar dependencias Node.js
         run: npm install
 
-      - name: 🧪 Ejecutar pruebas (si existieran)
+      - name: Ejecutar pruebas (si existieran)
         run: echo "Sin pruebas definidas aún"
 
-      - name: 🛠️ Descargar y preparar OWASP Dependency-Check
+      - name: Descargar y preparar OWASP Dependency-Check
         run: |
           wget https://github.com/jeremylong/DependencyCheck/releases/download/v8.4.0/dependency-check-8.4.0-release.zip
           unzip -q dependency-check-8.4.0-release.zip -d temp
@@ -24,15 +24,15 @@ jobs:
       - name: Ver estructura tras descompresión
         run: ls -R temp
 
-      - name: 🔍 Ejecutar Dependency-Check (SCA)
+      - name: Ejecutar Dependency-Check (SCA)
         run: |
-          ./dependency-check/bin/dependency-check.sh \
+          ./temp/dependency-check/bin/dependency-check.sh \
             --project "safenotes" \
             --scan . \
             --format "HTML" \
             --out dependency-check-report
 
-      - name: 📤 Subir reporte como artefacto
+      - name: Subir reporte como artefacto
         uses: actions/upload-artifact@v4
         with:
           name: dependency-check-report
