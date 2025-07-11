@@ -21,6 +21,9 @@ jobs:
           unzip -q dependency-check-8.4.0-release.zip -d temp
           chmod +x temp/dependency-check/bin/dependency-check.sh
 
+      - name: Ver estructura tras descompresión
+        run: ls -R temp
+
       - name: 🔍 Ejecutar Dependency-Check (SCA)
         run: |
           ./dependency-check/bin/dependency-check.sh \
