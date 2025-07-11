@@ -154,3 +154,34 @@ Puedes descargarlo desde la pestaña Actions en GitHub luego de cada ejecución 
     - Seguridad automatizada desde etapas tempranas del desarrollo (Shift Left).
     - Herramienta SCA para prevenir ataques por dependencias inseguras.
     - Integración CI sin afectar la velocidad de desarrollo.
+
+---
+
+## Reflexión final
+### ¿Dónde se integran mejor las herramientas?
+    - Herramienta	Tipo	Etapa ideal
+    - Dependency-Check	SCA	Desarrollo / CI temprano
+    - Trivy	SCA+IAc	Construcción de imagen
+---
+
+## Preguntas finales y guía para responder
+    1. ¿Diferencia entre SAST, DAST y SCA?
+    R: SAST (Static Analysis Security Testing): analiza código fuente.
+       DAST: ataca la app en ejecución.
+       SCA: detecta problemas en librerías externas.
+
+    2. ¿Qué herramientas fueron más fáciles?
+    R: Dependency-Check y Trivy tienen bajo umbral de entrada, ZAP requiere más configuración.
+
+    3. ¿Cómo mejora DevSecOps la seguridad sin frenar?
+    R: Automatiza validaciones.
+       Detecta errores antes.
+       No depende del equipo de seguridad al final del ciclo.
+
+    4. ❓¿Qué parte automatizarías completamente?
+    R: Análisis de dependencias (SCA).
+       Escaneo de contenedores (Trivy).
+       Reportes de seguridad en cada pull request.
+
+---
+
