@@ -90,7 +90,8 @@ node app.js
 
 ## Archivo .github/workflows/ci.yml
 
-```name: DevSecOps CI
+```
+name: DevSecOps CI
 
 on: [push]
 
@@ -98,31 +99,35 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Clonar repositorio
+      - name: Clonar repositorio
         uses: actions/checkout@v3
 
       - name: 📦 Instalar dependencias Node.js
         run: npm install
 
-      - name: 🧪 Ejecutar pruebas (si existieran)
+      - name: Ejecutar pruebas (si existieran)
         run: echo "Sin pruebas definidas aún"
 
-      - name: 🛠️ Descargar y preparar OWASP Dependency-Check
+      - name: Descargar y preparar OWASP Dependency-Check
         run: |
-          wget https://github.com/jeremylong/DependencyCheck/releases/download/v8.4.0/dependency-check-8.4.0-release.zip
-          unzip -q dependency-check-8.4.0-release.zip -d temp
-          mv temp/dependency-check-* dependency-check
-          chmod +x dependency-check/bin/dependency-check.sh
+          wget https://github.com/jeremylong/DependencyCheck/releases/download/v7.4.4/dependency-check-7.4.4-release.zip
+          unzip -q dependency-check-7.4.4-release.zip -d temp
+          chmod +x temp/dependency-check/bin/dependency-check.sh
 
-      - name: 🔍 Ejecutar Dependency-Check (SCA)
+      - name: Actualizar base de datos CVE (Dependency-Check)
         run: |
-          ./dependency-check/bin/dependency-check.sh \
+          ./temp/dependency-check/bin/dependency-check.sh --updateonly
+
+      - name: Ejecutar Dependency-Check (SCA)
+        run: |
+          ./temp/dependency-check/bin/dependency-check.sh \
             --project "safenotes" \
             --scan . \
             --format "HTML" \
-            --out dependency-check-report
+            --out dependency-check-report \
+            --disableAssembly
 
-      - name: 📤 Subir reporte como artefacto
+      - name: Subir reporte como artefacto
         uses: actions/upload-artifact@v4
         with:
           name: dependency-check-report
@@ -178,10 +183,9 @@ Puedes descargarlo desde la pestaña Actions en GitHub luego de cada ejecución 
        Detecta errores antes.
        No depende del equipo de seguridad al final del ciclo.
 
-    4. ❓¿Qué parte automatizarías completamente?
+    4. ¿Qué parte automatizarías completamente?
     R: Análisis de dependencias (SCA).
        Escaneo de contenedores (Trivy).
        Reportes de seguridad en cada pull request.
 
 ---
-
