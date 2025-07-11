@@ -17,8 +17,8 @@ jobs:
 
       - name: Descargar y preparar OWASP Dependency-Check
         run: |
-          wget https://github.com/jeremylong/DependencyCheck/releases/download/v8.4.0/dependency-check-8.4.0-release.zip
-          unzip -q dependency-check-8.4.0-release.zip -d temp
+          wget https://github.com/jeremylong/DependencyCheck/releases/download/v7.4.4/dependency-check-7.4.4-release.zip
+          unzip -q dependency-check-7.4.4-release.zip -d temp
           chmod +x temp/dependency-check/bin/dependency-check.sh
 
       - name: Actualizar base de datos CVE (Dependency-Check)
