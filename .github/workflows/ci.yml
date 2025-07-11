@@ -19,16 +19,15 @@ jobs:
         run: |
           wget https://github.com/jeremylong/DependencyCheck/releases/download/v8.4.0/dependency-check-8.4.0-release.zip
           unzip -q dependency-check-8.4.0-release.zip -d temp
-          mv temp/dependency-check-* dependency-check
-          chmod +x dependency-check/bin/dependency-check.sh
+          chmod +x temp/dependency-check/bin/dependency-check.sh
 
       - name: Actualizar base de datos CVE (Dependency-Check)
         run: |
-          ./dependency-check/bin/dependency-check.sh --updateonly
+          ./temp/dependency-check/bin/dependency-check.sh --updateonly
 
       - name: Ejecutar Dependency-Check (SCA)
         run: |
-          ./dependency-check/bin/dependency-check.sh \
+          ./temp/dependency-check/bin/dependency-check.sh \
             --project "safenotes" \
             --scan . \
             --format "HTML" \
